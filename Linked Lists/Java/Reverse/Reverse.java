@@ -24,21 +24,34 @@ public class Reverse {
 
         Cur = Head;
         
-        ListNode Bait = new ListNode();
+        //Recursive Solution
+        /* 
         print(Cur);
-        
-        
-        ListNode Test1 =  reverseRecursive1(Bait);
-        
-       
-     
+        ListNode Test1 =  reverseRecursive1(Cur);     
         print(Test1);
+        */
 
-
+        //Iterative Solution
+        print(Cur);
+        ListNode Test2 = reverseList(Cur);
+        System.out.println("reversed");
+        print(Test2);
 
 
     }
-    
+
+    public static ListNode reverseList(ListNode cur){
+        if (cur == null){ return null; }                            //check if input is empty
+        ListNode head = new ListNode(cur.val);                      //create new Head Node
+        while (cur.next != null ){                                  //iterate through list
+            ListNode newHead = new ListNode(cur.next.val, head);    //next value in list has node created, and its next value was the last head in new list
+            head = newHead;                                         //update the head of the new list; so we may point the next value to it
+            cur = cur.next;                                         //move down the original list
+        }
+        return head;                                                //return the reversed list
+    }
+
+
     public static ListNode reverseRecursive1(ListNode Head){
         ListNode newHead = new ListNode(Head.val);
         return reverseRecursive2(Head, newHead);

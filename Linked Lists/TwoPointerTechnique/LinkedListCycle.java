@@ -32,7 +32,7 @@ public class LinkedListCycle {
         twoe2.next = heade2;
 
         //Example 3
-        ListNode heade3 = new ListNode(1);
+        //ListNode heade3 = new ListNode(1);
     }
 
     public static boolean hasCycle(ListNode head) {

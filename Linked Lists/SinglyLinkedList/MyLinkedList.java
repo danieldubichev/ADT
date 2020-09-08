@@ -89,11 +89,9 @@ public static void main (String[] args){
     /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
     public void addAtHead(int val) {
         if (head.next == tail){
-
             Node newHead = new Node(val, tail);
             head.next = newHead;
         } else {
- 
             Node newHead = new Node(val, head.next);
             head.next = newHead;
         }
